@@ -47,15 +47,18 @@ export function Counter() {
             dispatch(incrementByAmount(Number(incrementAmount) || 0))
           }
         >
-          Add Amount
+        Add Amount
         </button>
+
         <button
           className={styles.asyncButton}
           onClick={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}
         >
-          Add Async
+        Add Async
         </button>
+
       </div>
+       
     </div>
   );
 }

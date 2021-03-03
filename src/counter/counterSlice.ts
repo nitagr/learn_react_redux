@@ -24,7 +24,13 @@ export const counterSlice = createSlice({
         }
     }
 
-})
+});
+
+export const addAsync = (amount: number): AppThunk => dispatch => {
+    setTimeout(() => {
+      dispatch(incrementByAmount(amount));
+    }, 1000);
+  };
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 

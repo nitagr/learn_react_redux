@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, selectCount, incrementByAmount } from './counterSlice';
+import { increment, decrement, selectCount, incrementByAmount, addAsync } from './counterSlice';
 import styles from './counter.module.css';
 
 
@@ -44,7 +44,15 @@ export const Counter: FunctionComponent = () => {
                >
                 Add amount
                </button>
+               {' '}
+               <button
+                className={styles.button}
+                onClick = {() => dispatch(addAsync(Number(amount)))}
+               >
+                Add Async
+               </button>
             </div>
+            <h4> Here Add amount is mocked as async</h4>
       </div>
     );
 }
